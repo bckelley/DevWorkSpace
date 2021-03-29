@@ -139,15 +139,15 @@ function New-Project {
         }
 
         if ($r.clone_url) {
-            $msg = 
-@"
-            To push an existing local repository to Github run these commands:
-            -> git remote add $repo $($r.clone_url)"
-            -> git push -u $repo master
-"@
-            Write-Host $msg -ForegroundColor Green
+#             $msg = 
+# @"
+#             To push an existing local repository to Github run these commands:
+#             -> git remote add $repo $($r.clone_url)"
+#             -> git push -u $repo master
+# "@
+#             Write-Host $msg -ForegroundColor Green
 
-            git remote add master $r.clone_url
+            git remote add $repo $r.clone_url
             git push $repo master
 
         }
